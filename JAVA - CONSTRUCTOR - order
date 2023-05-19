@@ -1,0 +1,58 @@
+// Java Program to Demonstrate Inherited constructor
+// calls the parent constructor by default
+
+// Class 1
+// Main class
+class GFG {
+
+	// Main driver method
+	public static void main(String[] a)
+	{
+		// Inherited constructor calling
+		new child();
+		new child(100);
+	}
+}
+
+// Class 2
+// Parent class (Helper class)
+class parent {
+ int io=56;
+	// Constructor of parent class
+	parent()
+	{
+
+		System.out.println("I am parent class constructor");
+	}
+  parent(int i){
+  System.out.println("parent parameter constructor");
+  
+  }
+}
+
+// Class 3
+// Child class (Helper class)
+class child extends parent {
+
+	// Constructor 1
+	// Constructor of child class
+	child()
+	{
+	    
+	    //explicitly calls the parametrised const of paremt 
+        super(545);
+
+       
+		System.out.println("I am child class constructor");
+	}
+
+	// Constructor 2
+	// Constructor of child class
+	child(int x)
+	{
+	    
+       // calls default const of parent 
+	
+		System.out.println("I am param child class constructor");
+	}
+}
