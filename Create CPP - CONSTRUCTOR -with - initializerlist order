@@ -1,0 +1,46 @@
+
+#include <iostream>
+using namespace std;
+
+
+class C   {
+   public:
+   C(){
+   
+    cout<<"c def \n";
+  
+  }
+  C(int i){
+   
+    cout<<"c para \n";
+  
+  }
+};
+
+class D : public C {
+  public :
+  
+  //note that we use initializer list here
+  D(): C(90){
+      
+  
+        cout<<"d def \n";
+      
+      
+  }
+ 
+  
+};
+
+int main()
+{
+	D object;
+
+}
+
+/*
+output
+_____________
+c para 
+d d
+*/
