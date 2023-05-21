@@ -1,0 +1,50 @@
+
+#include <iostream>
+using namespace std;
+
+
+class C   {
+   public:
+   C(){
+   
+    cout<<"c def \n";
+  
+  }
+  C(int i){
+   
+    cout<<"c para \n";
+  
+  }
+};
+
+class D : public C {
+  public :
+  
+  D(){
+        //by default compiler calls def constrictor of C - ie, C()
+        C(90);
+        cout<<"d def \n";
+      
+      
+  }
+ 
+  
+};
+
+int main()
+{
+	D object;
+
+}
+
+
+/*
+OUTPUT
+____________
+c def 
+c para 
+d def 
+
+
+
+*/
