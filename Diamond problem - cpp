@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+
+class A {
+public:
+A(){
+    
+    cout<<"a def\n";
+  
+  }
+  A(int i){
+      cout<<"a paraa \n";
+  }
+
+};
+
+class B :   public   A {
+    public:
+    B(): A(5634){
+   
+    cout<<"b def \n";
+  
+  }
+};
+
+class C :   public  A {
+   public:
+   C() : A(54){
+   
+    cout<<"c def \n";
+  
+  }
+};
+
+class D : public B, public C {
+  public :
+ 
+  
+};
+
+int main()
+{
+	D object;
+
+}
+
+
+/*
+
+output
+_______________
+a paraa 
+b def 
+a paraa 
+c def 
+
+*/
