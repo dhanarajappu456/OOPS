@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+class A {
+public:
+A(){
+    
+    cout<<"a def\n";
+  
+  }
+  A(int i){
+      cout<<"a paraa \n";
+  }
+
+};
+
+class B :   public  virtual  A {
+    public:
+    B(): A(5634){
+   
+    cout<<"b def \n";
+  
+  }
+};
+
+class C :   public virtual  A {
+   public:
+   C() : A(54){
+   
+    cout<<"c def \n";
+  
+  }
+};
+
+class D : public B, public C {
+  public :
+ 
+  
+};
+
+int main()
+{
+	D object;
+
+}
+
+/*
+output
+_________________
+a def
+b def 
+c def 
+
+
+*/
