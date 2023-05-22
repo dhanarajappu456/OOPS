@@ -1,0 +1,62 @@
+//by default , when using the virtual inheritance , even if we specify the para constructor of the grand parent class(A) to be called from the immediate  child class(B,C), the default constructor of the it is called.
+to avoid this we can call them from the grandchild class or the most derived class(C)
+
+#include <iostream>
+using namespace std;
+
+class A {
+public:
+A(){
+    
+    cout<<"a def\n";
+  
+  }
+  A(int i){
+      cout<<"a paraa \n";
+  }
+
+};
+
+class B :   public   virtual A {
+    public:
+    B(): A(5634){
+   
+    cout<<"b def \n";
+  
+  }
+};
+
+class C :   public  virtual A {
+   public:
+   C() : A(54){
+   
+    cout<<"c def \n";
+  
+  }
+};
+
+class D : public B, public C {
+  public :
+  //the def constriuctor of grand parent, called from most derived class
+  D(): A(334){
+      
+  }
+ 
+  
+};
+
+int main()
+{
+	D object;
+
+}
+
+/*
+o/p 
+
+a paraa 
+b def 
+c def 
+while compared with - https://github.com/dhanarajappu456/OOPS/blob/main/Create%20Diamond%20problem%20solution(virtual%20inheritance)%20-%20cpp
+
+*/
