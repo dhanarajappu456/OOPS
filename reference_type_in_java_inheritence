@@ -1,0 +1,51 @@
+public class Test {
+    public static void main(String[] args) {
+        P b = new B();
+        // prints 22 , since fields in parent class is not polymorphed, or overriden
+        System.out.println(b.a);
+        
+    }
+
+    static class P {
+        public int a = 11;
+
+        public P() {
+            a = 22;
+            // calls display of child - dynamic polymorphism , 
+            //so value of  a is 0, since is not initalized yet
+            //prints "I am in B, value is 0"
+            diplay();
+        }
+
+        public void diplay() {
+            System.out.println("I am in P, value is " + a);
+        }
+    }
+
+    static class B extends P {
+        int a = 33;
+
+        public B() {
+            a = 44;
+            // no confusion calls the diaplay of this class, and since 
+            //a is initialised now, so prints 
+            //prints I am in B, value is 44
+            diplay();
+        }
+
+        public void diplay() {
+            System.out.println("I am in B, value is " + a);
+        }
+    }
+}
+
+/*
+
+
+I am in B, value is 0
+I am in B, value is 44
+22
+
+
+
+*/
